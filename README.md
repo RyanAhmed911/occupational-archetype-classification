@@ -29,9 +29,14 @@ sensitivity concentrates in only two places, and adding gating to a SimpleRNN is
 roughly **+42 F1 points** at identical width and dropout. `history` is the easiest class
 across all ten models; `psychology` and `medicine` are the most confusable.
 
+
 See [`RESULTS.md`](RESULTS.md) for the full analysis.
 
 The best model is BERT-base fine-tuned with light preprocessing (lr=5e-5, batch 32, 3
 epochs), reaching ~0.95 accuracy and weighted F1 on the validation set. See
 [`deployment/README.md`](deployment/README.md) to run or redeploy it — note the trained
 weights are distributed as a [release asset](../../releases), not committed to the repo.
+
+## Demo Video
+
+[Demo Link](https://drive.google.com/file/d/1yPUnq4DQ4v0h05XnFR_fUkaTyOJ7nkPv/view?fbclid=IwcGRvZgVleHRuA2FlbQIxMABicmlkETFFWmptTG9YcWFTcnFyenBNc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHmfQ3_krkwB2w68deL3DB5RPl9FNdPZJ6QvefDxCyiFo9jRGHyNyJAk59tuJ_aem_f6SX0PzccDJrL6Aig-2a2w)
