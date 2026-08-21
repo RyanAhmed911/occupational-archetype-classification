@@ -17,7 +17,19 @@ load may take ~19 seconds while the container wakes. It is not broken — give i
 |---|---|
 | `06_23301529_24241095_24241213.ipynb` | Full pipeline: EDA, preprocessing, 10 model families × 3 configs, evaluation |
 | `06_23301529_24241095_24241213.pdf` | Final written report |
+| [`RESULTS.md`](RESULTS.md) | Experiments and analysis: main results, per-class behaviour, ablations, error analysis |
+| `figures/` | Generated plots — class distribution, word clouds, confusion matrices, model comparisons |
 | `deployment/` | The Gradio app and Modal deployment for the winning model |
+
+## Results
+
+BERT-base with light preprocessing wins, but the more interesting findings are about *why*:
+preprocessing interacts with the representation rather than the task, hyperparameter
+sensitivity concentrates in only two places, and adding gating to a SimpleRNN is worth
+roughly **+42 F1 points** at identical width and dropout. `history` is the easiest class
+across all ten models; `psychology` and `medicine` are the most confusable.
+
+See [`RESULTS.md`](RESULTS.md) for the full analysis.
 
 The best model is BERT-base fine-tuned with light preprocessing (lr=5e-5, batch 32, 3
 epochs), reaching ~0.95 accuracy and weighted F1 on the validation set. See
