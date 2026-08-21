@@ -216,3 +216,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Model weights ship as a GitHub Release asset (418MB, over GitHub's 100MB file limit)
+*.safetensors
